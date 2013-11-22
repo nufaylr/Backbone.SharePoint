@@ -140,6 +140,29 @@ contacts.create({
 
 ```
 
+Following example shows how filter parameter works.
+
+```js
+// You define a Contact Model for items by extending Backbone.SP.Item
+
+var Contact = Backbone.SP.Item.extend({
+	defaults: {
+	  LastName : "",
+	  FirstName: ""		
+	},
+	site: '/teamsite',
+	list: 'Contacts'
+	
+})
+
+var contacts = new Contact;
+
+// Filtering by Last name equal to person called Peel.
+contacts.fetch({
+	filter: 'LastName eq \'Peel\''
+});
+```
+
 Hopefully this is sufficient to get you going!
 
 
